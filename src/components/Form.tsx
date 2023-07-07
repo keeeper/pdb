@@ -76,8 +76,9 @@ const Form: React.FC<FormDataProps> = ({formData}) => {
         } catch (error) {
             getToast(toast, 'Error occurred', 'error');
             console.error('Error occurred:', error);
+        } finally {
+            setIsLoading(false);
         }
-        setIsLoading(false);
     }
 
     return (

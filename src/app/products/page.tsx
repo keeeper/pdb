@@ -29,9 +29,9 @@ const Product = () => {
 
     return (
         <ChakraProvider>
-            <Flex height='100vh' background='gray.100' alignItems='center' justifyContent='center'>
-                <Flex direction ='column' background='white' p={12} rounded={8}>
-                    <Link href='/'>Back</Link>
+            <Flex alignItems='center' justifyContent='center'>
+                <Flex direction ='column' background='white' p={8} rounded={8}>
+                    <Link href='/' color='teal.500' mb={6} _hover={{ textDecoration: 'none', color: 'teal.700' }}>Back to scanner</Link>
                     <Heading as='h1' mb={10}>Update product details</Heading>
                     {!!formData && (<Form formData={formData} />)}
                 </Flex>

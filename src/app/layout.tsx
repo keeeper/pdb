@@ -10,8 +10,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body>
-        {children}
+      <body style={{backgroundColor:'#edf2f7'}}>
+        <main style={{marginTop: 30, marginBottom: 30}}>
+          {children}
+        </main>
       </body>
     </html>
   )

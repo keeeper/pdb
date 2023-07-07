@@ -25,11 +25,11 @@ const Home = () => {
             } else {
               getToast(toast, `No product with code '${code}' found`, 'error');
             }
-
         } catch (error) {
             console.error('Error occurred:', error);
+        } finally {
+          setIsLoading(false);
         }
-        setIsLoading(false);
     }
 
     const navigateToProduct = (code: string | number) => {
@@ -47,8 +47,8 @@ const Home = () => {
 
     return (
       <ChakraProvider>
-        <Flex height='100vh' background='gray.100' alignItems='center' justifyContent='center'>
-            <Flex alignItems='center'direction ='column' background='white' p={12} rounded={8}>
+        <Flex alignItems='center' justifyContent='center'>
+            <Flex alignItems='center'direction ='column' background='white' p={8} rounded={8}>
                 <Heading as='h1'>Welcome to products database!</Heading>
                 <Text fontSize='l'>Scan code using camera</Text>
                 <BarcodeScanner onDetected={(code)=>fetchProductByCode(code)} />
