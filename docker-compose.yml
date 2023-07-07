@@ -1,19 +1,8 @@
 services:
-  nextjs:
-    ports:
-      - 3000:3000
+  pdb:
     build:
       context: .
       dockerfile: Dockerfile
-    command: npm run dev
-    volumes:
-      - .:/app
-  json-server:
     ports:
-      - 3001:3001
-    build:
-      context: .
-      dockerfile: Dockerfile
-    command: npm run mock
-    volumes:
-      - .:/app
+      - '3000:3000'
+      - '3001:3001'
