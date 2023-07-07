@@ -14,21 +14,20 @@ server.put('/products/:code', (req, res) => {
   const dbInternalFilePath = path.join(__dirname, 'db-internal.json');
 
   const dbInternalContent = JSON.parse(fs.readFileSync(dbInternalFilePath, 'utf8'));
-  const productIndex = dbInternalContent.products.findIndex(product => product.code === productCode);
+  const product = dbInternalContent.products.find(product => product.code === productCode);
 
-  if (productIndex === -1) {
+  if (!product) {
     const newProduct = {
       code: productCode,
       ...newData
     };
     dbInternalContent.products.push(newProduct);
   } else {
-    const existingProduct = dbInternalContent.products[productIndex];
-    dbInternalContent.products[productIndex] = { ...existingProduct, ...newData };
+    Object.assign(product, newData);
   }
 
   fs.writeFileSync(dbInternalFilePath, JSON.stringify(dbInternalContent, null, 2));
-  res.status(200).json(dbInternalContent.products[productIndex]);
+  res.status(200).json(product);
 });
 
 server.use(router);
