@@ -19,7 +19,6 @@ Application allows to scan barcode using camera, or enter it manually using form
 ##### docker:
 ```
 $ docker compose up --build
-$ docker compose up 
 ```
 ##### or npm:
 ```
@@ -29,14 +28,20 @@ $ npm run dev:db
 
 ##### Preview:
 ```
-$ localhost:3000
+http://localhost:3000
 ```
+
+##### Api url:
+```
+http://localhost:3001
+```
+
 ##### Run tests
 ```
 $ npm run test
 ```
 
-### Useful resources
+#### Useful resources
 - Library for barcode scanning [QuaggaJS](https://github.com/ericblade/quagga2)
 - Generate barcodes for testing [barcode.tec-it.com](https://barcode.tec-it.com/de/EAN13?data=978020137962)
 - [Next.js docs](https://nextjs.org/docs).
