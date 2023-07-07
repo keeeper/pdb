@@ -15,13 +15,13 @@ Application allows to scan barcode using camera, or enter it manually using form
   - unicode characters that require parcing are parced.
   - `trade_item_descriptor` name transformed to `trade_item_unit_descriptor`.
 
-## Setup and run
+## Setup and run:
 ##### docker:
 ```
 $ docker compose up --build
 $ docker compose up 
 ```
-##### npm:
+##### or npm:
 ```
 $ npm i
 $ npm run dev:db
