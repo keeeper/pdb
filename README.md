@@ -41,6 +41,37 @@ http://localhost:3001
 $ npm run test
 ```
 
+## Possible improvements:
+#### Identify products by code + type
+- using scanner: `type` can be obtained from quagga's response
+- using form: add switcher `gtin <-> plu`
+- add `type` to request when feching data
+
+#### UX/UI
+- add responsive
+- improve accessibility 
+- disable `code` form when scanner is `on`
+- clear button for `code` form
+- skeletons for content while loading
+- replace “select” for booleans with iOS like switcher
+- change form labels (remove underscores)
+- check which fields are may be also required
+- tooltips for form field explaining what  is that field for
+
+#### Code
+- fetch:
+  - add error messages for user (not only in console)
+  - create reusable fetch function
+  - add loading during fetching
+  - check if `response.ok`
+- add default values to useState
+- <ChakraProvider> move to top parent
+- `onChange{(e)=>f(e)}` function call may be omitted
+- use store (redux, context)
+- TypeSript: avoid using `any`
+- TypeSript: better type setting
+- more tests
+  
 ## Useful resources
 - Library for barcode scanning [QuaggaJS](https://github.com/ericblade/quagga2)
 - Generate barcodes for testing [barcode.tec-it.com](https://barcode.tec-it.com/de/EAN13?data=978020137962)
